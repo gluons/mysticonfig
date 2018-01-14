@@ -4,4 +4,4 @@
 
 🔮 The configuration loader for wizard. (🚧 WIP)
 
-> **rc config file loader made easy.**
+> **The rc config file loader made easy.**
