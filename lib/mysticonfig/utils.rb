@@ -74,3 +74,5 @@ module Mysticonfig
     end
   end
 end
+
+# rubocop:enable Style/RescueStandardError
