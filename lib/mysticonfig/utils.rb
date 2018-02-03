@@ -23,7 +23,7 @@ module Mysticonfig
     ##
     # Determine whether the given file is valid YAML file.
     def self.yaml_file?(file)
-      return false if file.nil?
+      return false if file.nil? || json_file?(file)
 
       result = YAML.safe_load(File.read(file))
       result.is_a?(Hash)
