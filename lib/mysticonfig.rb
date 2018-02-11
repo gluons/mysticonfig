@@ -1,7 +1,5 @@
 require_relative 'mysticonfig/utils'
 
-Utils = Mysticonfig::Utils
-
 ##
 # Mystic Config
 module Mysticonfig
