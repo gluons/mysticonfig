@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} poi build --require ts-node/register --config poi.config.ts",
-    "dev": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} poi --require ts-node/register --config poi.config.ts"
+    "dev": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} poi --require ts-node/register --config poi.config.ts",
+    "lint": "tslint -p ."
   },
   "repository": {
     "type": "git",
