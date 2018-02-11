@@ -50,6 +50,12 @@ RSpec.describe 'Utilities methods' do
     config = Utils.load_auto plain_fixture
     expect(config).to eql EXPECTED_CONFIG
   end
+
+  it 'should be able to look up for the path to config file' do
+    Dir.chdir fixtures_dir
+    config_path = Utils.lookup_file '.lolrc'
+    expect(config_path).to eql plain_fixture
+  end
 end
 
 # rubocop:enable Metrics/BlockLength
