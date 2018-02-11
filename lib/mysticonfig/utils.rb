@@ -1,8 +1,6 @@
 require 'json'
 require 'yaml'
 
-# rubocop:disable Style/RescueStandardError
-
 ##
 # Mystic Config
 module Mysticonfig
@@ -91,5 +89,3 @@ module Mysticonfig
     end
   end
 end
-
-# rubocop:enable Style/RescueStandardError
