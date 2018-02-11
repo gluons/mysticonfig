@@ -6,6 +6,7 @@ const options: Options = {
 		title: 'mysticonfig',
 		description: 'The configuration loader for wizard.'
 	},
+	homepage: './',
 	presets: ['typescript']
 };
 
