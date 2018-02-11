@@ -20,6 +20,28 @@ module Mysticonfig
       Utils.load_auto config_file
     end
 
+    ##
+    # Find and load JSON config file.
+    def load_json
+      json_config_file = Utils.lookup_file @filenames[:json]
+
+      Utils.load_json json_config_file
+    end
+
+    ##
+    # Find and load YAML config file.
+    def load_yaml
+      yaml_config_files = @filenames[:yaml]
+      yaml_config_file = nil
+
+      yaml_config_files.each do |file|
+        yaml_config_file = Utils.lookup_file file
+        return Utils.load_yaml(yaml_config_file) unless yaml_config_file.nil?
+      end
+
+      {} # Return empty hash when can't load config file
+    end
+
     private
 
     # rubocop:disable Metrics/MethodLength
