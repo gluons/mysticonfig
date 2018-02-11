@@ -4,3 +4,5 @@ Layout/IndentHeredoc:
   Enabled: false
 Style/RescueStandardError:
   EnforcedStyle: implicit
+Exclude:
+  - 'vendor/**/*' # Travis CI Bundler gems
