@@ -30,3 +30,7 @@ config = loader.load # Automatically detect and load config
 json_config = loader.load_json # Only load config from JSON file
 yaml_config = loader.load_yaml # Only load config from YAML file (.yaml or .yml)
 ```
+
+## Documentation
+
+See https://gluons.github.io/mysticonfig/
