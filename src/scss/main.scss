@@ -1,3 +1,12 @@
 code {
 	font-family: 'Fira Mono', monospace !important;
 }
+pre.copiable {
+	position: relative;
+
+	span.copy-button {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+	}
+}

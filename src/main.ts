@@ -1,5 +1,6 @@
 import Buefy from 'buefy';
 import Vue from 'vue';
+import VueClipboard from 'vue-clipboard2';
 import Prism from 'vue-prism-component';
 import VueRouter from 'vue-router';
 
@@ -21,6 +22,7 @@ Vue.use(VueRouter);
 Vue.use(Buefy, {
 	defaultIconPack: 'fas'
 });
+Vue.use(VueClipboard);
 
 // Components
 Object.keys(components).forEach(name => {
