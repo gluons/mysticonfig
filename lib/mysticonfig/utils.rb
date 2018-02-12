@@ -5,7 +5,7 @@ require 'yaml'
 # Mystic Config
 module Mysticonfig
   ##
-  # Utilies
+  # Utilities
   module Utils
     ##
     # Determine whether the given file is valid JSON file.
