@@ -28,8 +28,10 @@
   },
   "homepage": "https://github.com/gluons/mysticonfig",
   "dependencies": {
-    "iview": "^2.9.2",
+    "buefy": "^0.6.3",
+    "prismjs": "^1.11.0",
     "vue": "^2.5.13",
+    "vue-prism-component": "^1.0.1",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
