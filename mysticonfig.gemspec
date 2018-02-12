@@ -18,7 +18,8 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
   s.homepage = 'https://github.com/gluons/mysticonfig'
   s.metadata = {
-    'bug_tracker_uri' => 'https://github.com/gluons/mysticonfig/issues'
+    'bug_tracker_uri' => 'https://github.com/gluons/mysticonfig/issues',
+    'homepage_uri' => 'https://gluons.github.io/mysticonfig/'
   }
 
   s.add_runtime_dependency 'json', '~> 2.1'
