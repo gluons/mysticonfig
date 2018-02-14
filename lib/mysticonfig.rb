@@ -6,8 +6,9 @@ module Mysticonfig
   ##
   # Configuration loader.
   class Loader
-    def initialize(appname)
+    def initialize(appname, default_config = {})
       @filenames = Utils.generate_config_filenames appname
+      @default_config = default_config
     end
 
     ##
@@ -15,7 +16,8 @@ module Mysticonfig
     def load
       config_file = find_file @filenames
 
-      Utils.load_auto config_file
+      config = Utils.load_auto config_file
+      config.empty? ? @default_config : @default_config.merge(config)
     end
 
     ##
@@ -23,7 +25,8 @@ module Mysticonfig
     def load_json
       json_config_file = Utils.lookup_file @filenames[:json]
 
-      Utils.load_json json_config_file
+      config = Utils.load_json json_config_file
+      config.empty? ? @default_config : @default_config.merge(config)
     end
 
     ##
@@ -34,10 +37,13 @@ module Mysticonfig
 
       yaml_config_files.each do |file|
         yaml_config_file = Utils.lookup_file file
-        return Utils.load_yaml(yaml_config_file) unless yaml_config_file.nil?
+        unless yaml_config_file.nil?
+          config = Utils.load_yaml(yaml_config_file)
+          return config.empty? ? @default_config : @default_config.merge(config)
+        end
       end
 
-      {} # Return empty hash when can't load config file
+      @default_config # Return default config when can't load config file
     end
 
     private

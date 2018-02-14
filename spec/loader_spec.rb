@@ -1,6 +1,6 @@
 require 'mysticonfig'
 
-Loader = Mysticonfig::Loader
+Loader = Mysticonfig::Loader unless defined? Loader
 
 fixtures_dir = File.expand_path('./fixtures', File.dirname(__FILE__))
 
