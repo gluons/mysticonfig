@@ -12,6 +12,9 @@
 
 A library to load `.appnamerc`, `.appnamerc.json` or `.appnamerc.yaml` config file easily.
 
+`mysticonfig` will lookup for your config file.  
+It keeps traversing up until it **finds the config file** or **reaches your home directory**.
+
 > Gem's name inspired by [cosmiconfig](https://github.com/davidtheclark/cosmiconfig)
 
 ## Installation
