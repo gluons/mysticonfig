@@ -8,27 +8,51 @@
 				code {{ installCode }}
 	section.section: .container
 		h1.title Usage
-		h2.title.is-4 Automatically detect and load config
-		.content
-			prism(language='ruby').
-				require 'mysticonfig'
+		usage-section(title='Automatically detect and load config').
+			require 'mysticonfig'
 
-				loader = Mysticonfig::Loader.new 'appname'
-				config = loader.load
-		h2.title.is-4 Load config from only JSON file
-		.content
-			prism(language='ruby').
-				require 'mysticonfig'
+			loader = Mysticonfig::Loader.new 'appname'
+			config = loader.load
+		usage-section(title='Automatically detect and load config with default config fallback').
+			require 'mysticonfig'
 
-				loader = Mysticonfig::Loader.new 'appname'
-				config = loader.load_json
-		h2.title.is-4 Load config from only YAML file
-		.content
-			prism(language='ruby').
-				require 'mysticonfig'
+			DEFAULT_CONFIG = {
+				'a' =&gt; 'A',
+				'b' =&gt; 'B',
+				'c' =&gt; 'C'
+			}
+			loader = Mysticonfig::Loader.new('appname', DEFAULT_CONFIG)
+			config = loader.load
+		usage-section(title='Load config from only JSON file').
+			require 'mysticonfig'
 
-				loader = Mysticonfig::Loader.new 'appname'
-				config = loader.load_yaml
+			loader = Mysticonfig::Loader.new 'appname'
+			config = loader.load_json
+		usage-section(title='Load config from only JSON file with default config fallback').
+			require 'mysticonfig'
+
+			DEFAULT_CONFIG = {
+				'a' =&gt; 'A',
+				'b' =&gt; 'B',
+				'c' =&gt; 'C'
+			}
+			loader = Mysticonfig::Loader.new('appname', DEFAULT_CONFIG)
+			config = loader.load_json
+		usage-section(title='Load config from only YAML file').
+			require 'mysticonfig'
+
+			loader = Mysticonfig::Loader.new 'appname'
+			config = loader.load_yaml
+		usage-section(title='Load config from only YAML file with default config fallback').
+			require 'mysticonfig'
+
+			DEFAULT_CONFIG = {
+				'a' =&gt; 'A',
+				'b' =&gt; 'B',
+				'c' =&gt; 'C'
+			}
+			loader = Mysticonfig::Loader.new('appname', DEFAULT_CONFIG)
+			config = loader.load_yaml
 </template>
 
 <script lang="ts">

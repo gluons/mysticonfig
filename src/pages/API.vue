@@ -8,7 +8,7 @@
 			p Configuration loader.
 	section.section: .container
 		h2.title.is-4
-			| (Loader) initialize(appname)
+			| (Loader) initialize(appname, default_config = {})
 			method-tag
 			constructor-tag
 		.content.is-size-5
@@ -24,6 +24,11 @@
 					prism(language='ruby').
 						loader = Mysticonfig::Loader.new 'lolapp'
 						# It'll lookup for .lolapprc, .lolapprc.json, .lolapprc.yaml or .lolapprc.yml
+				li
+					p
+						strong default_config
+						|
+						| (#[code Hash]) #[em (default to #[code {}])] — Default configuration.
 	section.section: .container
 		h2.title.is-4
 			| (Hash) load
