@@ -22,10 +22,29 @@ gem install mysticonfig
 
 ## Usage
 
+### Normal
+
 ```ruby
 require 'mysticonfig'
 
 loader = Mysticonfig::Loader.new 'appname'
+config = loader.load # Automatically detect and load config
+json_config = loader.load_json # Only load config from JSON file
+yaml_config = loader.load_yaml # Only load config from YAML file (.yaml or .yml)
+```
+
+### With default config fallback
+
+```ruby
+require 'mysticonfig'
+
+DEFAULT_CONFIG = {
+	'a' => 'A',
+	'b' => 'B',
+	'c' => 'C'
+}
+
+loader = Mysticonfig::Loader.new('appname', DEFAULT_CONFIG)
 config = loader.load # Automatically detect and load config
 json_config = loader.load_json # Only load config from JSON file
 yaml_config = loader.load_yaml # Only load config from YAML file (.yaml or .yml)
