@@ -9,6 +9,11 @@
 	<% if (htmlWebpackPlugin.options.description) { %>
 	<meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
 	<% } %>
+	<meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>">
+	<meta property="og:description" content="<%= htmlWebpackPlugin.options.description %>">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://gluons.github.io/mysticonfig/">
+	<meta property="og:image" content="https://gluons.github.io/mysticonfig/rubygems_logo.png">
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Fira+MonoFira+Mono:400,700" rel="stylesheet">
 </head>
