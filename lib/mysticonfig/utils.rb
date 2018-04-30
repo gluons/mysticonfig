@@ -75,17 +75,17 @@ module Mysticonfig
     # Look up for an existent config file.
     def self.lookup_file(config_file, dir = Dir.pwd)
       dir = File.realpath dir
-      current_filepath = File.expand_path(config_file, dir)
-      return current_filepath if File.exist?(current_filepath)
 
       # Stop on home directory or root directory.
       home_path = File.expand_path '~'
-      is_home = dir == home_path
-      is_root = dir == '/'
-      return nil if is_home || is_root
+      while (dir != home_path) && (dir != '/')
+        current_filepath = File.expand_path(config_file, dir)
+        return current_filepath if File.exist?(current_filepath)
 
-      upper_path = File.realpath('..', dir)
-      lookup_file(config_file, upper_path) # Traverse up
+        dir = File.realpath('..', dir) # Traverse up
+      end
+
+      nil
     end
   end
 end
